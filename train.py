@@ -11,7 +11,7 @@ if __name__ == "__main__":
     model.train(
         # Dunno why but relative path doesn't work here
         data=absolute_path,
-        epochs=10,  # Should probably increase
+        epochs=25,  # Should probably increase
         imgsz=640,
         batch=16,
         name="yolov8_chess",
