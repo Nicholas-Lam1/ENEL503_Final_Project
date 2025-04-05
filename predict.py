@@ -225,8 +225,13 @@ for file_name in os.listdir(image_directory):
                     pt = tuple(map(int, det['warp_loc']))
                     cv2.circle(warp, pt, 3, (0, 0, 255), -1)
 
-                output_path = os.path.join(output_directory, "result_" + file_name)
-                cv2.imwrite(output_path, warp)
+                img_output_path = os.path.join(output_directory, "result_" + file_name)
+                cv2.imwrite(img_output_path, warp)
+
+                fen_output_path = os.path.join(output_directory, "result_" + os.path.splitext(file_name)[0] + ".txt")
+
+                with open(fen_output_path, 'w') as fen_file:
+                    fen_file.write(fen)
             else:
                 print("No valid corners found for chessboard detection.")
         else:
