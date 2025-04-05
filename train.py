@@ -1,8 +1,9 @@
-from ultralytics import YOLO
 import os
+from ultralytics import YOLO
 
 if __name__ == "__main__":
-    model = YOLO("yolov8n.pt")
+    model = YOLO("yolov8s.pt")
+    model.to('cuda')
 
     # Making an absolute path since relative path wasn't working for some reason
     absolute_path = os.path.join(os.getcwd(), 'datasets/chess/data.yaml')
@@ -10,7 +11,7 @@ if __name__ == "__main__":
     model.train(
         # Dunno why but relative path doesn't work here
         data=absolute_path,
-        epochs=4,  # Should probably increase
+        epochs=10,  # Should probably increase
         imgsz=640,
         batch=16,
         name="yolov8_chess",
