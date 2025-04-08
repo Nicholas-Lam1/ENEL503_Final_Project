@@ -7,19 +7,18 @@ from matplotlib import pyplot as plt
 
 # Mapping from YOLO class ID (from data.yaml) to FEN notation
 piece_mapping = {
-    0: 'b',  # bishop (assumed black)
-    1: 'b',  # black-bishop
-    2: 'k',  # black-king
-    3: 'n',  # black-knight
-    4: 'p',  # black-pawn
-    5: 'q',  # black-queen
-    6: 'r',  # black-rook
-    7: 'B',  # white-bishop
-    8: 'K',  # white-king
-    9: 'N',  # white-knight
-    10: 'P', # white-pawn
-    11: 'Q', # white-queen
-    12: 'R'  # white-rook
+    0: 'b',  # black-bishop
+    1: 'k',  # black-king
+    2: 'n',  # black-knight
+    3: 'p',  # black-pawn
+    4: 'q',  # black-queen
+    5: 'r',  # black-rook
+    6: 'B',  # white-bishop
+    7: 'K',  # white-king
+    8: 'N',  # white-knight
+    9: 'P', # white-pawn
+    10: 'Q', # white-queen
+    11: 'R'  # white-rook
 }
 
 def line_intersection(line1, line2):
@@ -109,6 +108,9 @@ def map_pieces_to_grid(piece_detections, grid):
     return board
 
 def generate_fen(board):
+    board = np.array(board)
+    board = board.T
+
     # Convert the 8x8 board array into a FEN string
     fen_rows = []
     for row in board:
