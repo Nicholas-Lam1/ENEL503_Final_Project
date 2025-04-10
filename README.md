@@ -32,4 +32,9 @@ model.train(
 )
 ```
 
-Once this change is made, please follow the instructions explained in `Commands to Run`. Training should be quicker, however, the results will not be reflective of the performance we were able to achieve.
+Additionally, please delete the `runs` folder. It contains the 25 epoch - standard weight model we trained and will not be replaced by new training, as the best model is kept and utilized.
+
+Once these changes have been made, please follow the instructions explained in `Commands to Run`. Training should be quicker, however, the results will not be reflective of the performance we were able to achieve.
+
+
+Thank you so much for the semester, have a great summer!
