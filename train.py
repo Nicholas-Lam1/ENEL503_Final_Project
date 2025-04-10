@@ -9,7 +9,6 @@ if __name__ == "__main__":
     absolute_path = os.path.join(os.getcwd(), 'datasets/chess/data.yaml')
 
     model.train(
-        # Dunno why but relative path doesn't work here
         data=absolute_path,
         epochs=25,  
         imgsz=640,

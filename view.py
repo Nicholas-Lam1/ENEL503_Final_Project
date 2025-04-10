@@ -19,17 +19,17 @@ def update_display():
     txt_path = output_image_path.replace('.jpg', '.txt')
 
     output_img = mpimg.imread(output_image_path)
-    ax1.imshow(output_img)
-    ax1.set_title("Output Image")
-    ax1.axis('off')
+    ax2.imshow(output_img)
+    ax2.set_title("Output Image")
+    ax2.axis('off')
 
     if os.path.exists(original_image_path):
         original_img = mpimg.imread(original_image_path)
-        ax2.imshow(original_img)
-        ax2.set_title("Original Image")
+        ax1.imshow(original_img)
+        ax1.set_title("Original Image")
     else:
-        ax2.text(0.5, 0.5, 'Original image not found.', ha='center', va='center')
-    ax2.axis('off')
+        ax1.text(0.5, 0.5, 'Original image not found.', ha='center', va='center')
+    ax1.axis('off')
 
     if os.path.exists(txt_path):
         with open(txt_path, 'r') as f:
